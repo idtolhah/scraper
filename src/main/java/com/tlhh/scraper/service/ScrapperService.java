@@ -40,9 +40,7 @@ public class ScrapperService {
         CsvSchema schema = csvMapper.schemaFor(Product.class).withHeader();
 
         try {
-            System.out.println("Trying...");
             File file = new File(filename);
-            System.out.println("csv filename: " + filename);
             csvMapper.writer(schema).writeValue(file, products);
             return filename;
         } catch (IOException | RuntimeException e) {
