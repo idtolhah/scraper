@@ -50,7 +50,7 @@ public class Scrapper {
      * @param count max number of product returned
      * @return list containing product based on category
      */
-    public List<Product> extractProductList()
+    public List<Product> scrapeProducts()
             throws FailException {
         final Driver webDriver = new Driver();
         final List<Product> products = new ArrayList<>(COUNT);
@@ -80,7 +80,7 @@ public class Scrapper {
                     webDriver.scrollDownSmall();
                     webDriver.waitOnElement(XPATH_MERCHANT_NAME);
 
-                    products.add(extractProduct(webDriver, path));
+                    products.add(scrapeOneProduct(webDriver, path));
 
                     if (products.size() == COUNT) {
                         break;
@@ -98,7 +98,7 @@ public class Scrapper {
         return products;
     }
 
-    private Product extractProduct(Driver webDriver, String path) {
+    private Product scrapeOneProduct(Driver webDriver, String path) {
         String name = webDriver.getText(XPATH_PRODUCT_NAME);
         String desc = webDriver.getText(XPATH_PRODUCT_DESCRIPTION);
         String imageLink = webDriver.getText(XPATH_PRODUCT_IMG_LINK, SRC);

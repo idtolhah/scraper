@@ -1,5 +1,5 @@
 # scraper
-Tokopedia e-commerce products scraper
+Tokopedia e-commerce top 100 handphone category products scraper
 
 The tech stacks:
 - Java 11

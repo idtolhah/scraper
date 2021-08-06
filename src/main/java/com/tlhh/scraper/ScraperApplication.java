@@ -18,7 +18,7 @@ public class ScraperApplication {
         System.out.println("Scrapping " + Scrapper.COUNT + " " + Scrapper.CATEGORY + " products...");
         ScrapperService service = new ScrapperService();
         try {
-            String csv = service.downloadProductListCsv();
+            String csv = service.processTheCsv();
             System.out.println("Scrapping is successfully and will be saved to " + csv);
         } catch (FailException e) {
             System.err.println("Failed. Please try again.");

@@ -29,10 +29,10 @@ public class ScrapperService {
         this.scrapper = scrapper;
     }
 
-    public String downloadProductListCsv()
+    public String processTheCsv()
             throws FailException {
         String filename = PRODUCT + UNDERSCORE + Scrapper.CATEGORY + UNDERSCORE + System.currentTimeMillis() + CSV_EXT;
-        List<Product> products = scrapper.extractProductList();
+        List<Product> products = scrapper.scrapeProducts();
 
         CsvMapper csvMapper = new CsvMapper();
         csvMapper.enable(Feature.IGNORE_UNKNOWN);
