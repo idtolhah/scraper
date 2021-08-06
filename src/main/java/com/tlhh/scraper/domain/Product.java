@@ -10,7 +10,15 @@ import lombok.Data;
 @AllArgsConstructor
 @Builder
 @Data
-@JsonPropertyOrder({"name", "description", "imageLink", "price", "rating", "merchant", "link"})
+@JsonPropertyOrder({
+    "name", 
+    "description", 
+    "imageLink", 
+    "price", 
+    "rating", 
+    "merchant", 
+    "link"
+})
 public class Product {
     public static final String SEPARATOR = ",";
     public static final String DOUBLE_QUOTES = "\"";

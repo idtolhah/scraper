@@ -66,7 +66,7 @@ public class Scrapper {
                 for (WebElement item : items) {
                     String path = item.findElement(By.xpath(XPATH_PRODUCT_LINK)).getAttribute(HREF);
                     if (isTopAdsLink(path)) {
-                        path = extractTopAdsLink(path);
+                        path = scrapeAds(path);
                     }
 
                     webDriver.getWebpage(path, tabs.get(1)); //switch to new tab
@@ -123,7 +123,7 @@ public class Scrapper {
         return path.contains(TOP_ADS_URL);
     }
 
-    private String extractTopAdsLink(String path) throws IOException {
+    private String scrapeAds(String path) throws IOException {
         return URLDecoder.decode(path.substring(path.indexOf(PARAM_R) + 2).split(AMP)[0],
                 StandardCharsets.UTF_8.name());
     }
