@@ -16,6 +16,7 @@ The concept behind this utility
 - By using selenium library, we can scrape data on background just like browsing via web browser
 - We also use jackson dataformat to import scraped data into csv file
 
+Flow
 - First, when this program is running, it begins to scrape products data using selenium webdriver by looking at the xpath of the html element of the website to get Name of Product, Description, Image Link, Price, Rating(out of 5 stars), Name of store or merchant and the product's link values.
 - For each element, it has to go through the link to scrape the description value.
 - After scraping proccess, it then use CsvMapper form jackson dataformat csv library to try writing scraped data values into the csv file.
